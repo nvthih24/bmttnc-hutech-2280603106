@@ -5,6 +5,8 @@ class CaesarCipher:
         self.alphabet = ALPHABET
 
     def encrypt_text(self, text: str, key: int) -> str:
+        if text is None:
+            raise ValueError("Input text cannot be None")
         alphabet_len = len(self.alphabet)
         text = text.upper()
         encrypted_text = []
